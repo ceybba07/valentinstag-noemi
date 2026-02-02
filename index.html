@@ -128,7 +128,7 @@
         overflow: hidden;
         display: grid;
         place-items: end center;
-        background: linear-gradient(#4abef8 0%, #b3e8f9 40%, #ffffff 100%);
+        background: linear-gradient(#89d7ff 0%, #c8f1ff 40%, #ffffff 100%);
       }
 
       .intro-garden::before {
@@ -261,14 +261,6 @@
         animation: flowerSway 4.2s ease-in-out infinite;
       }
 
-      .flower:nth-child(odd) {
-        animation-duration: 4.6s;
-      }
-
-      .flower:nth-child(even) {
-        animation-duration: 3.9s;
-      }
-
       @keyframes flowerSway {
         0%,
         100% {
@@ -311,20 +303,6 @@
           rgba(95, 220, 150, 0.95)
         );
         box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.18);
-      }
-
-      .leaf--l {
-        transform-origin: right bottom;
-        border-radius: 120px 0 120px 0;
-        transform: translateX(-50%) rotate(-28deg) scale(0);
-        animation: leafIn 0.95s 0.9s ease forwards;
-      }
-
-      .leaf--r {
-        transform-origin: left bottom;
-        border-radius: 0 120px 0 120px;
-        transform: translateX(-50%) rotate(28deg) scale(0);
-        animation: leafIn 0.95s 1.02s ease forwards;
       }
 
       @keyframes leafIn {
@@ -513,349 +491,42 @@
           transform: scale(1);
         }
       }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2rem;
+        }
+        h2 {
+          font-size: 1.4rem;
+        }
+
+        .buttons {
+          height: 100px;
+        }
+
+        button {
+          padding: 10px 20px;
+          font-size: 1rem;
+        }
+
+        .flowers {
+          width: 100%;
+          height: 60vh;
+        }
+
+        .card {
+          padding: 2rem 1.5rem;
+        }
+      }
     </style>
   </head>
-
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 
   <body class="not-loaded">
     <div class="intro-garden" id="introGarden">
       <div class="sky-title"><span>Heyyy Noemi</span></div>
 
       <div class="flowers">
-        <div
-          class="flower"
-          style="
-            left: 2%;
-            width: 150px;
-            height: 330px;
-            bottom: 7vh;
-            --petal1: #ff5c7a;
-            --petal2: #ff2d55;
-            --stem1: #188a50;
-            --stem2: #42c97b;
-            --glow: rgba(255, 45, 85, 0.22);
-          ">
-          <div class="stem"></div>
-          <div class="leaf leaf--l"></div>
-          <div class="leaf leaf--r"></div>
-          <div class="bloom">
-            <span class="petal p1"></span><span class="petal p2"></span
-            ><span class="petal p3"></span><span class="petal p4"></span>
-            <span class="petal p5"></span><span class="petal p6"></span
-            ><span class="petal p7"></span><span class="petal p8"></span>
-            <div class="center"></div>
-          </div>
-          <div class="glow"></div>
-        </div>
-
-        <div
-          class="flower"
-          style="
-            left: 10%;
-            width: 145px;
-            height: 325px;
-            bottom: 7vh;
-            --petal1: #9dff8a;
-            --petal2: #2ee46b;
-            --stem1: #167a43;
-            --stem2: #39c96e;
-            --glow: rgba(46, 228, 107, 0.18);
-          ">
-          <div class="stem"></div>
-          <div class="leaf leaf--l"></div>
-          <div class="leaf leaf--r"></div>
-          <div class="bloom">
-            <span class="petal p1"></span><span class="petal p2"></span
-            ><span class="petal p3"></span><span class="petal p4"></span>
-            <span class="petal p5"></span><span class="petal p6"></span
-            ><span class="petal p7"></span><span class="petal p8"></span>
-            <div class="center"></div>
-          </div>
-          <div class="glow"></div>
-        </div>
-
-        <div
-          class="flower"
-          style="
-            left: 18%;
-            width: 155px;
-            height: 340px;
-            bottom: 7.5vh;
-            --petal1: #ffcf6b;
-            --petal2: #ff7a00;
-            --stem1: #187a4c;
-            --stem2: #3cc979;
-            --glow: rgba(255, 122, 0, 0.16);
-          ">
-          <div class="stem"></div>
-          <div class="leaf leaf--l"></div>
-          <div class="leaf leaf--r"></div>
-          <div class="bloom">
-            <span class="petal p1"></span><span class="petal p2"></span
-            ><span class="petal p3"></span><span class="petal p4"></span>
-            <span class="petal p5"></span><span class="petal p6"></span
-            ><span class="petal p7"></span><span class="petal p8"></span>
-            <div class="center"></div>
-          </div>
-          <div class="glow"></div>
-        </div>
-
-        <div
-          class="flower"
-          style="
-            left: 26%;
-            width: 165px;
-            height: 350px;
-            --petal1: #ff8ad6;
-            --petal2: #ff4fb8;
-            --stem1: #1a8a52;
-            --stem2: #4ad18a;
-            --glow: rgba(255, 79, 184, 0.2);
-          ">
-          <div class="stem"></div>
-          <div class="leaf leaf--l"></div>
-          <div class="leaf leaf--r"></div>
-          <div class="bloom">
-            <span class="petal p1"></span><span class="petal p2"></span
-            ><span class="petal p3"></span><span class="petal p4"></span>
-            <span class="petal p5"></span><span class="petal p6"></span
-            ><span class="petal p7"></span><span class="petal p8"></span>
-            <div class="center"></div>
-          </div>
-          <div class="glow"></div>
-        </div>
-
-        <div
-          class="flower"
-          style="
-            left: 34%;
-            width: 165px;
-            height: 350px;
-            --petal1: #a78bff;
-            --petal2: #7c3aed;
-            --stem1: #187a4c;
-            --stem2: #3cc979;
-            --glow: rgba(124, 58, 237, 0.18);
-          ">
-          <div class="stem"></div>
-          <div class="leaf leaf--l"></div>
-          <div class="leaf leaf--r"></div>
-          <div class="bloom">
-            <span class="petal p1"></span><span class="petal p2"></span
-            ><span class="petal p3"></span><span class="petal p4"></span>
-            <span class="petal p5"></span><span class="petal p6"></span
-            ><span class="petal p7"></span><span class="petal p8"></span>
-            <div class="center"></div>
-          </div>
-          <div class="glow"></div>
-        </div>
-
-        <div
-          class="flower"
-          style="
-            left: 42%;
-            width: 150px;
-            height: 335px;
-            bottom: 7.2vh;
-            --petal1: #c9f7ff;
-            --petal2: #39c6ff;
-            --stem1: #187a4c;
-            --stem2: #3bc977;
-            --glow: rgba(57, 198, 255, 0.16);
-          ">
-          <div class="stem"></div>
-          <div class="leaf leaf--l"></div>
-          <div class="leaf leaf--r"></div>
-          <div class="bloom">
-            <span class="petal p1"></span><span class="petal p2"></span
-            ><span class="petal p3"></span><span class="petal p4"></span>
-            <span class="petal p5"></span><span class="petal p6"></span
-            ><span class="petal p7"></span><span class="petal p8"></span>
-            <div class="center"></div>
-          </div>
-          <div class="glow"></div>
-        </div>
-
-        <div
-          class="flower"
-          style="
-            left: 50%;
-            transform: translateX(-50%);
-            width: 190px;
-            height: 390px;
-            --petal1: #ffe76a;
-            --petal2: #ffb703;
-            --stem1: #1f8f4f;
-            --stem2: #49c97a;
-            --glow: rgba(255, 200, 0, 0.3);
-          ">
-          <div class="stem"></div>
-          <div class="leaf leaf--l"></div>
-          <div class="leaf leaf--r"></div>
-          <div class="bloom">
-            <span class="petal p1"></span><span class="petal p2"></span
-            ><span class="petal p3"></span><span class="petal p4"></span>
-            <span class="petal p5"></span><span class="petal p6"></span
-            ><span class="petal p7"></span><span class="petal p8"></span>
-            <div class="center"></div>
-          </div>
-          <div class="glow"></div>
-        </div>
-
-        <div
-          class="flower"
-          style="
-            left: 58%;
-            width: 160px;
-            height: 350px;
-            bottom: 7vh;
-            --petal1: #7bf0ff;
-            --petal2: #1b8bff;
-            --stem1: #187a4c;
-            --stem2: #3bc977;
-            --glow: rgba(27, 139, 255, 0.14);
-          ">
-          <div class="stem"></div>
-          <div class="leaf leaf--l"></div>
-          <div class="leaf leaf--r"></div>
-          <div class="bloom">
-            <span class="petal p1"></span><span class="petal p2"></span
-            ><span class="petal p3"></span><span class="petal p4"></span>
-            <span class="petal p5"></span><span class="petal p6"></span
-            ><span class="petal p7"></span><span class="petal p8"></span>
-            <div class="center"></div>
-          </div>
-          <div class="glow"></div>
-        </div>
-
-        <div
-          class="flower"
-          style="
-            left: 66%;
-            width: 170px;
-            height: 360px;
-            --petal1: #ffa65c;
-            --petal2: #ff6a00;
-            --stem1: #1e8a52;
-            --stem2: #43c97a;
-            --glow: rgba(255, 106, 0, 0.18);
-          ">
-          <div class="stem"></div>
-          <div class="leaf leaf--l"></div>
-          <div class="leaf leaf--r"></div>
-          <div class="bloom">
-            <span class="petal p1"></span><span class="petal p2"></span
-            ><span class="petal p3"></span><span class="petal p4"></span>
-            <span class="petal p5"></span><span class="petal p6"></span
-            ><span class="petal p7"></span><span class="petal p8"></span>
-            <div class="center"></div>
-          </div>
-          <div class="glow"></div>
-        </div>
-
-        <div
-          class="flower"
-          style="
-            left: 74%;
-            width: 150px;
-            height: 330px;
-            bottom: 7.2vh;
-            --petal1: #8ef0ff;
-            --petal2: #00c2ff;
-            --stem1: #187a4c;
-            --stem2: #3bc977;
-            --glow: rgba(0, 194, 255, 0.16);
-          ">
-          <div class="stem"></div>
-          <div class="leaf leaf--l"></div>
-          <div class="leaf leaf--r"></div>
-          <div class="bloom">
-            <span class="petal p1"></span><span class="petal p2"></span
-            ><span class="petal p3"></span><span class="petal p4"></span>
-            <span class="petal p5"></span><span class="petal p6"></span
-            ><span class="petal p7"></span><span class="petal p8"></span>
-            <div class="center"></div>
-          </div>
-          <div class="glow"></div>
-        </div>
-
-        <div
-          class="flower"
-          style="
-            left: 80%;
-            width: 165px;
-            height: 350px;
-            --petal1: #ff6b6b;
-            --petal2: #d90429;
-            --stem1: #1a7f4e;
-            --stem2: #41c97a;
-            --glow: rgba(217, 4, 41, 0.18);
-          ">
-          <div class="stem"></div>
-          <div class="leaf leaf--l"></div>
-          <div class="leaf leaf--r"></div>
-          <div class="bloom">
-            <span class="petal p1"></span><span class="petal p2"></span
-            ><span class="petal p3"></span><span class="petal p4"></span>
-            <span class="petal p5"></span><span class="petal p6"></span
-            ><span class="petal p7"></span><span class="petal p8"></span>
-            <div class="center"></div>
-          </div>
-          <div class="glow"></div>
-        </div>
-
-        <div
-          class="flower"
-          style="
-            left: 88%;
-            width: 155px;
-            height: 340px;
-            bottom: 7.1vh;
-            --petal1: #ffd1dc;
-            --petal2: #ff3d86;
-            --stem1: #1d8d53;
-            --stem2: #4fd58e;
-            --glow: rgba(255, 61, 134, 0.16);
-          ">
-          <div class="stem"></div>
-          <div class="leaf leaf--l"></div>
-          <div class="leaf leaf--r"></div>
-          <div class="bloom">
-            <span class="petal p1"></span><span class="petal p2"></span
-            ><span class="petal p3"></span><span class="petal p4"></span>
-            <span class="petal p5"></span><span class="petal p6"></span
-            ><span class="petal p7"></span><span class="petal p8"></span>
-            <div class="center"></div>
-          </div>
-          <div class="glow"></div>
-        </div>
-
-        <div
-          class="flower"
-          style="
-            left: 96%;
-            width: 145px;
-            height: 325px;
-            bottom: 7vh;
-            --petal1: #ffd6ff;
-            --petal2: #b517ff;
-            --stem1: #187a4c;
-            --stem2: #3cc979;
-            --glow: rgba(181, 23, 255, 0.14);
-          ">
-          <div class="stem"></div>
-          <div class="leaf leaf--l"></div>
-          <div class="leaf leaf--r"></div>
-          <div class="bloom">
-            <span class="petal p1"></span><span class="petal p2"></span
-            ><span class="petal p3"></span><span class="petal p4"></span>
-            <span class="petal p5"></span><span class="petal p6"></span
-            ><span class="petal p7"></span><span class="petal p8"></span>
-            <div class="center"></div>
-          </div>
-          <div class="glow"></div>
-        </div>
+        <!-- Blumen -->
       </div>
     </div>
 
