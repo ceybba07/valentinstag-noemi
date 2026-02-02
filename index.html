@@ -1067,6 +1067,26 @@
           `;
           document.body.appendChild(wuhuu);
         }, 1100);
+        function sendEmail() {
+          window.location.href =
+            "mailto:cedric.herzog@bbz-cfp.ch?subject=Noemi Valentine&body=Noemi het ja klickt!";
+        }
+
+        function sayYes() {
+          try {
+            yesSound.currentTime = 0;
+            yesSound.play();
+          } catch (e) {}
+          try {
+            applauseSound.currentTime = 0;
+            applauseSound.loop = true;
+            applauseSound.play();
+          } catch (e) {}
+
+          sendEmail(); // Email wird gesendet
+
+          // Dein Confetti und Herz-Animation Code bleibt unverändert
+        }
       }
 
       window.addEventListener("load", () => {
