@@ -2,6 +2,7 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>💌💌💌💌💌💌💌💌💌💌💌💌💌💌</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -131,78 +132,10 @@
         background: linear-gradient(#89d7ff 0%, #c8f1ff 40%, #ffffff 100%);
       }
 
-      .intro-garden::before {
-        content: "";
-        position: absolute;
-        inset: 0;
-        background: radial-gradient(
-            circle at 15% 20%,
-            rgba(255, 255, 255, 0.85),
-            transparent 28%
-          ),
-          radial-gradient(
-            circle at 35% 18%,
-            rgba(255, 255, 255, 0.8),
-            transparent 26%
-          ),
-          radial-gradient(
-            circle at 70% 22%,
-            rgba(255, 255, 255, 0.78),
-            transparent 30%
-          ),
-          radial-gradient(
-            circle at 85% 18%,
-            rgba(255, 255, 255, 0.72),
-            transparent 28%
-          );
-        filter: blur(1px);
-        opacity: 0.8;
-        animation: clouds 8s ease-in-out infinite;
-      }
-
-      @keyframes clouds {
-        0%,
-        100% {
-          transform: translateX(0);
-          opacity: 0.8;
-        }
-        50% {
-          transform: translateX(14px);
-          opacity: 0.9;
-        }
-      }
-
-      .intro-garden::after {
-        content: "";
-        position: absolute;
-        left: -5%;
-        right: -5%;
-        bottom: -10%;
-        height: 20%;
-        background: radial-gradient(
-            circle at 20% 90%,
-            rgba(106, 220, 140, 0.9),
-            transparent 55%
-          ),
-          radial-gradient(
-            circle at 70% 95%,
-            rgba(70, 190, 120, 0.9),
-            transparent 55%
-          ),
-          linear-gradient(
-            to top,
-            #3fbf7a 0%,
-            rgba(63, 191, 122, 0.25) 55%,
-            transparent 100%
-          );
-        filter: blur(0.2px);
-      }
-
       .flowers {
         position: relative;
-        width: min(1100px, 100vw);
-        height: 72vh;
-        transform: translateY(2vh);
+        width: 100%;
+        height: 60vh;
         z-index: 2;
         pointer-events: none;
       }
@@ -492,10 +425,12 @@
         }
       }
 
+      /* Mobile Styles */
       @media (max-width: 768px) {
         h1 {
           font-size: 2rem;
         }
+
         h2 {
           font-size: 1.4rem;
         }
@@ -551,6 +486,7 @@
         preload="auto"
         loop></audio>
     </div>
+
 
     <script>
       const noBtn = document.getElementById("noBtn");
