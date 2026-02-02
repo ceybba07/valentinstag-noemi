@@ -991,6 +991,12 @@
         dodgeNoButton(false);
       });
 
+      function sendEmail() {
+        // Hier wird eine E-Mail geöffnet
+        window.location.href =
+          "mailto:cedric.herzog@bbz-cfp.ch?subject=Betreff&body=Deine Nachricht hier.";
+      }
+
       function sayYes() {
         try {
           yesSound.currentTime = 0;
@@ -1002,6 +1008,7 @@
           applauseSound.play();
         } catch (e) {}
 
+        const isMobile = window.innerWidth <= 800; // Prüft, ob das Gerät ein mobiles Gerät ist
         const totalMs = 12000;
         const fadeOutMs = 2500;
         const end = performance.now() + totalMs;
@@ -1012,15 +1019,19 @@
             remaining <= fadeOutMs ? Math.pow(remaining / fadeOutMs, 2) : 1;
 
           if (now < end) {
-            const count = Math.max(1, Math.round(26 * intensity));
+            // Reduziere die Menge des Konfettis auf mobilen Geräten
+            const particleCount = isMobile
+              ? Math.max(1, Math.round(12 * intensity))
+              : Math.max(1, Math.round(26 * intensity));
+
             confetti({
-              particleCount: count,
+              particleCount: particleCount,
               spread: 120,
               startVelocity: 30,
               origin: { x: 0.08, y: 0.65 },
             });
             confetti({
-              particleCount: count,
+              particleCount: particleCount,
               spread: 120,
               startVelocity: 30,
               origin: { x: 0.92, y: 0.65 },
@@ -1036,6 +1047,7 @@
         }
         requestAnimationFrame(confettiLoop);
 
+        // Herz-Animation bleibt unverändert
         const heartTimer = setInterval(() => {
           const heart = document.createElement("div");
           heart.className = "heart-float";
@@ -1060,33 +1072,18 @@
           const wuhuu = document.createElement("div");
           wuhuu.className = "wuhuu";
           wuhuu.innerHTML = `
-            <h1 style="font-size:3.8rem; margin:0;">Wuhuuuuuu❤️❤️❤️</h1>
-            <h2 style="font-size:2rem; font-weight:500; margin-top:0.6rem;">
-              I fröieee miiii
-            </h2>
-          `;
+                  <h1 style="font-size:3.8rem; margin:0;">Wuhuuuuuu❤️❤️❤️</h1>
+                  <h2 style="font-size:2rem; font-weight:500; margin-top:0.6rem;">
+                      I fröieee miiii
+                  </h2>
+              `;
           document.body.appendChild(wuhuu);
         }, 1100);
-        function sendEmail() {
-          window.location.href =
-            "mailto:cedric.herzog@bbz-cfp.ch?subject=Noemi Valentine&body=Noemi het ja klickt!";
-        }
 
-        function sayYes() {
-          try {
-            yesSound.currentTime = 0;
-            yesSound.play();
-          } catch (e) {}
-          try {
-            applauseSound.currentTime = 0;
-            applauseSound.loop = true;
-            applauseSound.play();
-          } catch (e) {}
-
-          sendEmail(); // Email wird gesendet
-
-          // Dein Confetti und Herz-Animation Code bleibt unverändert
-        }
+        // Hier wird die E-Mail versendet
+        sendEmail(); // E-Mail senden
+        // Oder Instagram DM senden
+        // sendInstagramDM();  // Instagram DM öffnen
       }
 
       window.addEventListener("load", () => {
