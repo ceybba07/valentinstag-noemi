@@ -940,20 +940,23 @@
       function dodgeNoButton(isHover = false) {
         if (!noBtn || noBtn.style.display === "none") return;
 
+        // Fehler-Sound beim ersten Hover abspielen
         if (isHover) {
-          if (hoverCooldown) return;
+          if (hoverCooldown) return; // Cooldown verhindern
           hoverCooldown = true;
-          setTimeout(() => (hoverCooldown = false), 220);
+          setTimeout(() => (hoverCooldown = false), 220); // Cooldown für Hover
+          playErrorSound(); // Fehler-Sound beim Hover abspielen
+          attempts++; // Zählt jedes Hover-Ereignis
+
+          // Die Nachricht erst beim 3. Hover anzeigen
+          if (attempts === 3) {
+            message.innerHTML = "Oha, seg doch grad wenn mi nüm liebsch.";
+          }
         }
-
-        playErrorSound();
-
-        if (!isHover) attempts++;
 
         if (!isHover && attempts >= 3) {
           noBtn.style.opacity = "0";
           setTimeout(() => (noBtn.style.display = "none"), 250);
-          message.innerHTML = "Oha, seg doch grad wenn mi nüm liebsch.";
           return;
         }
 
@@ -994,7 +997,7 @@
       function sendEmail() {
         // Hier wird eine E-Mail geöffnet
         window.location.href =
-          "mailto:cedric.herzog@bbz-cfp.ch?subject=Betreff&body=Deine Nachricht hier.";
+          "mailto:cedric.herzog@bluewin.ch?subject=Valentinstag&body=Dini Nachricht...";
       }
 
       function sayYes() {
@@ -1072,11 +1075,11 @@
           const wuhuu = document.createElement("div");
           wuhuu.className = "wuhuu";
           wuhuu.innerHTML = `
-                  <h1 style="font-size:3.8rem; margin:0;">Wuhuuuuuu❤️❤️❤️</h1>
-                  <h2 style="font-size:2rem; font-weight:500; margin-top:0.6rem;">
-                      I fröieee miiii
-                  </h2>
-              `;
+                    <h1 style="font-size:3.8rem; margin:0;">Wuhuuuuuu❤️❤️❤️</h1>
+                    <h2 style="font-size:2rem; font-weight:500; margin-top:0.6rem;">
+                        I fröieee miiii
+                    </h2>
+                `;
           document.body.appendChild(wuhuu);
         }, 1100);
 
